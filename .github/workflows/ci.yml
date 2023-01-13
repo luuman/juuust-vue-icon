@@ -16,13 +16,9 @@ jobs:
     # 任务执行的步骤
     steps:
       # 步骤名称
-      - name: Checkout 🛎️
-        # 使用的操作 actions，可以使用公共仓库，本地仓库，别人的仓库的action
-        # 拉取代码
-        uses: actions/checkout@master
       - name: Build and Deploy
         # 构建发布 Github pages
-        uses: JamesIves/github-pages-deploy-action@releases/v2
+        uses: luuman/juuust-vue-icon
         # 该步骤所需的环境变量
         env:
           ACCESS_TOKEN: ${{ secrets.MY_TOKEN }}
