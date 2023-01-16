@@ -1,25 +1,25 @@
-name: Build and Deploy
-
+name: GitHub Actions Build and Deploy
 on:
   push:
     branches:
       - master
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@main
-    - run: npm install && npm run build
-    
-      # 部署到 GitHub Pages
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@v4.3.3
-      with:
-          token: ${{ secrets.MY_TOKEN }}
-          repository-name: David-XIa001/JSON-internationalization
-          BRANCH: main
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+        with:
+          persist-credentials: false
+
+      - name: Install and Build 🔧
+        run: |
+          yarn
+          yarn build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages
           FOLDER: dist
           CLEAN: true
-          commit-message: "Deploy by source"
