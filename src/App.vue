@@ -87,6 +87,12 @@
     color: #486491;
     transition: background-color 0.2s;
   }
+  .item div {
+    width: 100%;
+    font-size: 12px;
+    text-anchor: end;
+    overflow-wrap: break-word;
+  }
   .item:hover{
     background-color: #e7ecf3;
   }
