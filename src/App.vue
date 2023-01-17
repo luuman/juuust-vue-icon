@@ -84,7 +84,7 @@
     padding: 20px;
     border-radius: 6px;
     cursor: pointer;
-    color: #486491;
+    color: #000;
     transition: background-color 0.2s;
   }
   .item div {
