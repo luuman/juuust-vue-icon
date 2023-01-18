@@ -77,7 +77,6 @@
   .item {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 120px;
     height: 120px;
@@ -95,6 +94,9 @@
   }
   .item:hover{
     background-color: #e7ecf3;
+  }
+  .item:hover svg{
+    background-color: #00000026;
   }
   .item svg{
     margin-bottom: 12px;
